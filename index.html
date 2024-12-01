@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta name="description" content="Selamat datang di website resmi Desa Waledkota. Temukan informasi tentang sejarah, potensi, dan layanan kami. Bergabunglah dalam upaya membangun komunitas yang lebih baik.">
+    <title>Website Resmi Desa Waledkota - DEWATA</title>
+    <link rel="icon" href="icon/DEWATA.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet"/>
+    <style>
+        /* Webiste ini merupakan salah satu syarat kelulusan sidang PKL SMKN 4 Kuningan */
+        body {
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .icon {
+            margin-left: 15px;
+        }
+        .content {
+            flex: 1;
+        }
+        #back-to-top {
+            opacity: 0.7;
+        }
+
+        #back-to-top:hover {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800">
+    <!-- Navbar -->
+    <nav id="navbar" class="bg-green-600 text-white py-4 fixed top-0 left-0 w-full z-50 transition-transform duration-300">
+        <div class="container mx-auto flex items-center justify-between">
+            <a class="text-2xl font-bold mr-20" href="https://www.google.com/maps/place/Kantor+Kuwu+Waled+Kota/@-6.9182191,108.6749285,14z/data=!4m10!1m2!2m1!1skantor+desa+waledkota!3m6!1s0x2e6f0f2d18085325:0xb971fb4683596bde!8m2!3d-6.9182191!4d108.7109774!15sChVrYW50b3IgZGVzYSB3YWxlZGtvdGGSARRjaXR5X2Rpc3RyaWN0X29mZmljZeABAA!16s%2Fg%2F11f03nqv3t?entry=ttu&g_ep=EgoyMDI0MTEyNC4xIKXMDSoJLDEwMjExMjM0SAFQAw%3D%3D">Dewata</a>
+            <div class="hidden md:flex space-x-4">
+                <a class="flex items-center hover:text-gray-300 px-4" href="#beranda">
+                    <i class="fas fa-home mr-2"></i> Beranda
+                </a>
+                <a class="flex items-center hover:text-gray-300 px-4" href="#profil">
+                    <i class="fas fa-info-circle mr-2"></i> Profil
+                </a>
+                <a class="flex items-center hover:text-gray-300 px-4" href="#potensi">
+                    <i class="fas fa-leaf mr-2"></i> Potensi
+                </a>
+                <a class="flex items-center hover:text-gray-300 px-4" href="#layanan">
+                    <i class="fas fa-cogs mr-2"></i> Layanan
+                </a>
+                <a class="flex items-center hover:text-gray-300 px-4" href="#kegiatan">
+                    <i class="fas fa-calendar-alt mr-2"></i> Kegiatan
+                </a>
+                <a class="flex items-center hover:text-gray-300 px-4" href="#pengaduan">
+                    <i class="fas fa-comments mr-2"></i> Pengaduan
+                </a>
+                <a class=" flex items-center hover:text-gray-300 px-4" href="#peta">
+                    <i class="fas fa-map mr-2"></i> Peta
+                </a>
+                <a class="flex items-center hover:text-gray-300 px-4" href="#galeri">
+                    <i class="fas fa-images mr-2"></i> Galeri
+                </a>
+                <a class="flex items-center hover:text-gray-300 px-4" href="#kontak">
+                    <i class="fas fa-envelope mr-2"></i> Kontak
+                </a>
+                <a class="flex items-center hover:text-gray-300 px-4" href="#tentang">
+                    <i class="fas fa-question-circle mr-2"></i> Tentang
+                </a>
+            </div>
+            <div class="md:hidden flex items-center">
+                <button class="text-white focus:outline-none" id="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        <div class="hidden md:hidden" id="mobile-menu">
+            <a class="block px-4 py-2 flex items-center" href="#beranda">
+                <i class="fas fa-home mr-2"></i> Beranda
+            </a>
+            <a class="block px-4 py-2 flex items-center" href="#profil">
+                <i class="fas fa-info-circle mr-2"></i> Profil Desa 
+            </a>
+            <a class="block px-4 py-2 flex items-center" href="#potensi">
+                <i class="fas fa-leaf mr-2"></i> Potensi
+            </a>
+            <a class="block px-4 py-2 flex items-center" href="#layanan">
+                <i class="fas fa-cogs mr-2"></i> Layanan
+            </a>
+            <a class="block px-4 py-2 flex items-center" href="#kegiatan">
+                <i class="fas fa-calendar-alt mr-2"></i> Kegiatan dan Berita
+            </a>
+            <a class="block px-4 py-2 flex items-center" href="#pengaduan">
+                <i class="fas fa-comments mr-2"></i> Pengaduan
+            </a>
+            <a class="block px-4 py-2 flex items-center" href="#peta">
+                <i class="fas fa-map mr-2"></i> Peta
+            </a>
+            <a class="block px-4 py-2 flex items-center" href="#galeri">
+                <i class="fas fa-images mr-2"></i> Galeri
+            </a>
+            <a class="block px-4 py-2 flex items-center" href="#kontak">
+                <i class="fas fa-envelope mr-2"></i> Kontak
+            </a>
+            <a class="block px-4 py-2 flex items-center" href="#tentang">
+                <i class="fas fa-question-circle mr-2"></i> Tentang
+            </a>
+        </div>
+    </nav>
+    <!-- Beranda -->
+    <section class="bg-cover bg-center h-screen fade-in" id="beranda" style="background-image: url('img/background.jpg');">
+        <div class="bg-black bg-opacity-50 h-full flex items-center justify-center">
+            <div class="text-center text-white">
+                <h1 class="text-6xl font-bold mb-4">Selamat Datang di Dewata</h1>
+                <p class="text-lg mt-4">Platform Pengenalan Desa Waledkota</p>
+            </div>
+        </div>
+    </section>
+    <!-- Profil Desa -->
+    <section class="py-16 bg-gray-100 fade-in" id="profil">
+    <div class="container mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-8">Profil Desa</h2>
+
+        <!-- Sejarah Desa -->
+        <div class="rounded-lg shadow-lg bg-white p-4 flex">
+            <div class="flex-shrink-0">
+                <img src="img/sejarah.jpeg" alt="Sejarah Desa" class="w-48 h-48 object-cover rounded-lg"/>
+            </div>
+            <div class="ml-4">
+                <h3 class="text-2xl font-bold">Sejarah Desa</h3>
+                <p class="mb-2 text-justify">Desa Waledkota memiliki sejarah yang dimulai pada zaman penjajahan Belanda sekitar tahun 1890-an, ketika desa ini digunakan sebagai basis pertahanan dan persembunyian para pejuang Indonesia. Mayoritas penduduknya adalah keturunan Tionghoa, sehingga desa ini dikenal dengan sebutan PACINAN. Nama "Waled" berasal dari kisah Pangeran Sutajaya Upas, yang pada abad ke-15 ditugaskan oleh Syeh Syarif Hidaytullah (Sunan Gunung Jati) untuk menyebarkan agama Islam di wilayah Cirebon timur dan menumpas pasukan siluman di Gebang. Dalam perjalanannya, Pangeran Sutajaya Upas melewati daerah berlumpur yang membuat kudanya sulit berlari, sehingga nama "leled" diubah menjadi "Waled." Situs bersejarah terkait Pangeran Sutajaya Upas kini berada di TPU Purnaraga Desa Waledkota. Penambahan nama "kota" pada Waledkota terkait dengan keberadaan kantor Kecamatan, Koramil, Polsek, dan Klinik yang kini menjadi RSUD Waled.</p>
+            </div>
+        </div>
+
+        <!-- Jumlah & Kecamatan -->
+        <div class="rounded-lg shadow-lg bg-white p-4 flex mt-8">
+            <div class="flex-shrink-0">
+                <img src="img/jumlah_kecamatan.jpg" alt="Jumlah Kecamatan" class="w-48 h-48 object-cover rounded-lg"/>
+            </div>
+            <div class="ml-4">
+                <h3 class="text-2xl font-bold mb-2">Jumlah & Kecamatan</h3>
+                <p class="mb-2 text-justify">Desa Waledkota, Waleddesa, Waledasem, Mekarsari, Gunungsari, Karangsari, Cibogo, Cikula, Cikulak Kidul, Cisaat, Ambit, dan Ciuyah.</p>
+            </div>
+        </div>
+
+        <!-- Struktur Pemerintahan -->
+        <div class="rounded-lg shadow-lg bg-white p-4 flex mt-8">
+            <div class="flex-shrink-0">
+                <img src="img/struktur_pemerintahan.jpg" alt="Struktur Pemerintahan" class="w-48 h-48 object-cover rounded-lg"/>
+            </div>
+            <div class="ml-4">
+                <h3 class="text-2xl font-bold mb-2">Struktur Pemerintahan</h3>
+                <p class="mb-2 text-justify">Struktur pemerintahan Desa Waledkota dipimpin oleh Kepala Desa yang bertanggung jawab atas seluruh aspek pemerintahan desa. Kepala Desa dibantu oleh Sekretaris Desa yang mengelola administrasi pemerintahan bersama Kaur Umum dan Perencanaan, yang menangani administrasi umum dan perencanaan, serta Kaur Keuangan, yang mengelola keuangan desa. Ada juga Kasi Pemerintahan yang mengurus administrasi kependudukan dan hubungan antar lembaga, Kasi Kesejahteraan yang menangani bidang kesehatan, pendidikan, dan kesejahteraan sosial, serta Kasi Pelayanan yang bertugas melayani masyarakat terkait surat menyurat dan izin. Selain itu, terdapat Badan Permusyawaratan Desa (BPD) sebagai lembaga perwakilan masyarakat untuk mengawasi dan menyampaikan aspirasi.</p>
+            </div>
+        </div>
+
+        <!-- Demografi Penduduk -->
+        <div class="rounded-lg shadow-lg bg-white p-4 flex mt-8">
+            <div class="flex-shrink-0">
+                <img src="img/demografi.jpg" alt="Demografi Penduduk" class="w-48 h-48 object-cover rounded-lg"/>
+            </div>
+            <div class="ml-4">
+                <h3 class="text-2xl font-bold mb-2">Demografi Penduduk</h3>
+                <p class="mb-2 text-justify">Waledkota terdiri dari 5 (lima) Dusun, 12 RW, 35 RT dengan tingkat kepadatan penduduk yaitu: Laki-laki 2.142, Perempuan: 2.138 = 4.280 jiwa.</p>
+            </div>
+        </div>
+    </div>
+</section>
+    <!-- Potensi Desa -->
+    <section class="py-16 fade-in" id="potensi">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-8">Potensi Desa</h2>
+    
+            <!-- Sumber Daya Alam -->
+            <div class="rounded-lg shadow-lg bg-white p-4 mb-4">
+                <div class="flex items-center justify-between cursor-pointer" id="toggle-sda">
+                    <div class="flex items-center">
+                        <i class="fas fa-tree mr-2"></i>
+                        <h3 class="text-2xl font-bold">Sumber Daya Alam</h3>
+                    </div>
+                    <i class="fas fa-chevron-down" id="icon-sda"></i>
+                </div>
+                <div class="mt-2 hidden" id="content-sda">
+                    <div class="flex items-center">
+                        <img src="img/sda.jpg" alt="Sumber Daya Alam" class="w-48 h-auto rounded-lg mr-4">
+                        <p class="flex-1">Potensi Desa Waledkota dalam sektor sumber daya alam didominasi oleh keberadaan sungai dan hamparan sawah yang luas. Sungai di desa ini tidak hanya berfungsi sebagai sumber air utama bagi pertanian, tetapi juga mendukung kehidupan sehari-hari masyarakat. Sementara itu, sawah yang subur menjadi tulang punggung ekonomi desa dengan hasil pertanian yang melimpah, terutama padi sebagai komoditas utama. Dengan pengelolaan yang baik, potensi ini dapat terus dimaksimalkan untuk meningkatkan kesejahteraan masyarakat dan mendukung pembangunan desa secara berkelanjutan.</p>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Sumber Daya Manusia -->
+            <div class="rounded-lg shadow-lg bg-white p-4 mb-4">
+                <div class="flex items-center justify-between cursor-pointer" id="toggle-sdm">
+                    <div class="flex items-center">
+                        <i class="fas fa-users mr-2"></i>
+                        <h3 class="text-2xl font-bold">Sumber Daya Manusia</h3>
+                    </div>
+                    <i class="fas fa-chevron-down" id="icon-sdm"></i>
+                </div>
+                <div class="mt-2 hidden" id="content-sdm">
+                    <div class="flex items-center">
+                        <img src="img/sdm.jpg" alt="Sumber Daya Manusia" class="w-48 h-auto rounded-lg mr-4">
+                        <p class="flex-1">Potensi sumber daya manusia di Desa Waledkota terdiri dari berbagai peran yang mendukung pembangunan dan kesejahteraan masyarakat. Para petani menjadi tulang punggung ekonomi desa dengan mengelola lahan pertanian yang subur, menghasilkan komoditas utama seperti padi. Perangkat desa berperan penting dalam menjalankan roda pemerintahan dan memberikan pelayanan kepada masyarakat secara optimal. Selain itu, keberadaan guru turut mendukung peningkatan kualitas pendidikan di desa, menciptakan generasi yang cerdas dan berdaya saing. Pemuda Karang Taruna juga menjadi motor penggerak kegiatan sosial dan pemberdayaan, membantu menciptakan inovasi yang berdampak positif bagi kehidupan masyarakat Desa Waledkota.</p>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Produk Unggulan -->
+            <div class="rounded-lg shadow-lg bg-white p-4 mb-4">
+                <div class="flex items-center justify-between cursor-pointer" id="toggle-produk">
+                    <div class="flex items-center">
+                        <i class="fas fa-gift mr-2"></i>
+                        <h3 class="text-2xl font-bold">Produk Unggulan</h3>
+                    </div>
+                    <i class="fas fa-chevron-down" id="icon-produk"></i>
+                </div>
+                <div class="mt-2 hidden" id="content-produk">
+                    <div class="flex items-center">
+                        <img src="img/produk.jpg" alt="Produk Unggulan" class="w-48 h-auto rounded-lg mr-4">
+                        <p class="flex -1">Desa Waledkota memiliki produk unggulan yang beragam, yakni pasir, batu split, dan bambu, yang menjadi komoditas andalan desa. Pasir dan batu split yang dihasilkan menjadi bahan baku berkualitas tinggi untuk kebutuhan konstruksi, baik skala lokal maupun regional. Sementara itu, bambu dari Desa Waledkota dimanfaatkan untuk berbagai keperluan, seperti kerajinan tangan, bahan bangunan tradisional, hingga kebutuhan rumah tangga. Dengan potensi tersebut, Desa Waledkota terus mengembangkan sektor ini untuk mendukung perekonomian masyarakat dan memperkuat daya saing desa.</p>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Potensi Pariwisata -->
+            <div class="rounded-lg shadow-lg bg-white p-4 mb-4">
+                <div class="flex items-center justify-between cursor-pointer" id="toggle-pariwisata">
+                    <div class="flex items-center">
+                        <i class="fas fa-suitcase-rolling mr-2"></i>
+                        <h3 class="text-2xl font-bold">Potensi Pariwisata</h3>
+                    </div>
+                    <i class="fas fa-chevron-down" id="icon-pariwisata"></i>
+                </div>
+                <div class="mt-2 hidden" id="content-pariwisata">
+                    <div class="flex items-center">
+                        <img src="img/pariwisata.jpg" alt="Potensi Pariwisata" class="w-48 h-auto rounded-lg mr-4">
+                        <p class="flex-1">Desa Waledkota memiliki potensi pariwisata yang menjanjikan dengan rencana pembangunan desa wisata di sekitar area Dam Roti atau pintu air. Lokasi ini menawarkan daya tarik alami yang unik, dengan pemandangan sungai dan lingkungan yang asri, sehingga cocok untuk wisata edukasi, rekreasi, maupun spot foto yang Instagramable. Pembangunan desa wisata ini diharapkan dapat menjadi destinasi favorit yang tidak hanya meningkatkan kunjungan wisatawan tetapi juga mendorong perekonomian lokal melalui keterlibatan masyarakat dalam sektor pariwisata.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Layanan Desa -->
+    <section class="py-16 bg-gray-100 fade-in" id="layanan">
+            <div class="container mx-auto">
+                <h2 class="text-3xl font-bold text-center mb-8">Layanan Desa</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    
+                    <div class="text-center">
+                        <img src="img/Informasi.jpg" alt="Informasi Publik" class="mb-4 rounded-lg">
+                        <h3 class="text-2xl font-bold mb-4">Informasi Publik</h3>
+                        <p class="mb-4">Menyediakan akses informasi penting terkait kegiatan desa, program pemerintah, dan berita terbaru untuk mendukung transparansi dan keterbukaan informasi.</p>
+                    </div>
+                    <div class="text-center">
+                        <img src="img/administrasi.jpg" alt="Pelayanan Administrasi" class="mb-4 rounded-lg">
+                        <h3 class="text-2xl font-bold mb-4">Pelayanan Administrasi</h3>
+                        <p class="mb-4">Melayani berbagai kebutuhan administrasi desa, seperti pembuatan surat keterangan, pengurusan dokumen kependudukan, dan layanan lainnya dengan proses yang cepat dan mudah.</p>
+                    </div>
+                    <div class="text-center">
+                        <img src="img/Balai Desa 2.jpg" alt="Jadwal Pelayanan" class="mb-4 rounded-lg">
+                        <h3 class="text-2xl font-bold mb-4">Jadwal Pelayanan</h3>
+                        <p class="mb-4">Pelayanan desa tersedia setiap hari Senin hingga Jumat, mulai pukul 08.00 pagi hingga 15.00 sore. Hari Sabtu, Minggu, dan hari libur nasional kantor desa tidak beroperasi.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    <!-- Kegiatan dan Berita -->
+    <section class="py-16 fade-in" id="kegiatan">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-8">Kegiatan dan Berita</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-4 rounded shadow">
+                    <img alt="Gambar kegiatan desa" class="w-full h-48 object-cover mb-4" height="200" src="img/Balai desa 3.jpg" width="300"/>
+                    <h3 class="text-2xl font-bold mb-2">Renovasi Balai Desa <br> untuk Pelayanan yang Lebih Nyaman</h3>
+                    <p class="mb-4">Renovasi Balai Desa sedang dilakukan untuk meningkatkan fasilitas pelayanan masyarakat agar lebih nyaman dan memadai.</p>
+                </div>
+                <div class="bg-white p-4 rounded shadow">
+                    <img alt="Gambar kegiatan desa" class="w-full h-48 object-cover mb-4" height="200" src="img/Pembagian Beras Bulog Agustus.jpg" width="300"/>
+                    <h3 class="text-2xl font-bold mb-2">Pembagian Rutin Beras Bulog</h3>
+                    <p class="mb-4">Desa Waledkota membagikan beras Bulog kepada warga yang membutuhkan sebagai upaya mendukung ketahanan pangan masyarakat.</p>
+                </div>
+                <div class="bg-white p-4 rounded shadow">
+                    <img alt="Gambar kegiatan desa" class="w-full h-48 object-cover mb-4" height="200" src="img/Entri & Input Data Prodeskel Bina Pemdes.jpg" width="300"/>
+                    <h3 class="text-2xl font-bold mb-2">Kegiatan PKL SMKN 4 Kuningan</h3>
+                    <p class="mb-4">Siswa SMKN 4 Kuningan melaksanakan PKL di Balai Desa Waledkota, berkontribusi dalam pengelolaan administrasi dan pembuatan website desa.</p>
+                </div>
+                <div class="bg-white p-4 rounded shadow">
+                    <img alt="Gambar kegiatan desa" class="w-full h-48 object-cover mb-4" height="200" src="img/Persiapan Pentas Seni Malam Agustus-an.jpg" width="300"/>
+                    <h3 class="text-2xl font-bold mb-2">Persiapan Pentas Seni Malam Agustus-an</h3>
+                    <p class="mb-4">Siswa PKL mulai mempersiapkan pentas seni untuk meramaikan malam perayaan Hari Kemerdekaan Indonesia, dengan berbagai penampilan yang menarik, salah satunya seni alat musik Gamelan.</p>
+                </div>
+                <div class="bg-white p-4 rounded shadow">
+                    <img alt="Gambar kegiatan desa" class="w-full h-48 object-cover mb-4" height="200" src="img/Lomba Kebersihan Lingkungan Antar RT.jpeg" width="300"/>
+                    <h3 class="text-2xl font-bold mb-2">Lomba Kebersihan Lingkungan Antar RT</h3>
+                    <p class="mb-4">Dalam rangka memperingati Hari Kemerdekaan, Desa Waledkota mengadakan lomba kebersihan antar RT. Kegiatan ini diharapkan dapat mempererat kerja sama antarwarga sekaligus menjaga lingkungan tetap bersih dan sehat.</p>
+                </div>
+                <div class="bg-white p-4 rounded shadow">
+                    <img alt="Gambar kegiatan desa" class="w-full h-48 object-cover mb-4" height="200" src="img/Pelatihan Pengolahan Sampah.jpeg" width="300"/>
+                    <h3 class="text-2xl font-bold mb-2">Pelatihan Pengolahan Sampah bagi Warga Desa</h3>
+                    <p class="mb-4">Untuk mendukung gaya hidup berkelanjutan, Desa Waledkota mengadakan pelatihan pengolahan sampah. Pelatihan ini bertujuan membantu warga mengelola sampah menjadi produk yang bernilai guna.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Pengaduan Masyarakat -->
+    <section class="py-16 bg-gray-100 fade-in" id="pengaduan">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-8">Pengaduan Masyarakat</h2>
+            <form class="max-w-lg mx-auto bg-white p-8 rounded shadow" action="https://formspree.io/f/mkgnppbp" method="POST">
+                <div class="mb-4">
+                    <label class="block text-gray-700" for="nama">Nama</label>
+                    <input class="w-full p-2 border border-gray-300 rounded" id="nama" name="nama" required type="text"/>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700" for="email">Email</label>
+                    <input class="w-full p-2 border border-gray-300 rounded" id="email" name="email" required type="email"/>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700" for="pesan">Pesan</label>
+                    <textarea class="w-full p-2 border border-gray-300 rounded" id="pesan" name="pesan" required rows="4"></textarea>
+                </div>
+                <button class="bg-green-600 text-white px-4 py-2 rounded" type="submit">Kirim</button>
+            </form>
+            <div id="responseMessage" class="mt-4 text-center"></div>
+        </div>
+    </section>    
+    <!-- Peta Desa -->
+    <section class="py-16 fade-in" id="peta">
+        <div class="container mx-auto flex flex-col items-center">
+            <h2 class="text-3xl font-bold text-center mb-8">Peta Desa</h2>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31686.150505337602!2d108.67492851083983!3d-6.918219099999993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6f0f2d18085325%3A0xb971fb4683596bde!2sKantor%20Kuwu%20Waled%20Kota!5e0!3m2!1sid!2sid!4v1732803403185!5m2!1sid!2sid" 
+            width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </section>
+    <!-- Galeri Foto -->
+    <section class="py-16 fade-in" id="galeri">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-8">Galeri Foto</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                <div class="bg-white rounded shadow overflow-hidden">
+                    <img src="img/struktur_pemerintahan.jpg" alt="Balai Desa" class="w-full h-48 object-cover"/>
+                </div>
+                <div class="bg-white rounded shadow overflow-hidden">
+                    <img src="img/Balai Desa 2.jpg" alt="Balai Desa 2" class="w-full h-48 object-cover"/>
+                </div>
+                <div class="bg-white rounded shadow overflow-hidden">
+                    <img src="img/Dokumentasi.jpg" alt="Dokumentasi" class="w-full h-48 object-cover"/>
+                </div>
+                <div class="bg-white rounded shadow overflow-hidden">
+                    <img src="img/Balai Desa 3.jpg" alt="Balai desa" class="w-full h-48 object-cover"/>
+                </div>
+                <div class="bg-white rounded shadow overflow-hidden">
+                    <img src="img/Pelatihan Pengolahan Sampah.jpeg" alt="Pelatihan Pengolahan Sampah" class="w-full h-48 object-cover"/>
+                </div>
+                <div class="bg-white rounded shadow overflow-hidden">
+                    <img src="img/Entri & Input Data Prodeskel Bina Pemdes.jpg" alt="Entri & Input Data Prodeskel Bina Pemdes" class="w-full h-48 object-cover"/>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Kontak Kami -->
+    <section class="py-16 bg-gray-100 fade-in" id="kontak">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-8">Kontak Kami</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">Informasi Kontak</h3>
+                    <p class="mb-4">Alamat: Jl. Dewi Sartika No. 126, Kecamatan Waled, Kabupaten Cirebon 45187</p>
+                    <p class="mb-4">Telepon: +62 8383-7030-7897</p>
+                    <p class="mb-4">Email: <a href="mailto:infodewatamaju@gmail.com" class="text-blue-600 hover:underline">infodewatamaju@gmail.com</a></p>
+                    <div class="flex space-x-4">
+                        <a class="text-gray-700 hover:text-gray-900" href="#">
+                            <i class="fab fa-facebook fa-2x"></i>
+                        </a>
+                        <a class="text-gray-700 hover:text-gray-900" href="#">
+                            <i class="fab fa-twitter fa-2x"></i>
+                        </a>
+                        <a class="text-gray-700 hover:text-gray-900" href="#">
+                            <i class="fab fa-instagram fa-2x"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">Formulir Pertanyaan</h3>
+                    <form id="kontakForm" action="https://formspree.io/f/mwpkwwby" method="POST">
+                        <div class="mb-4">
+                            <label class="block text-gray-700" for="nama_kontak">Nama</label>
+                            <input class="w-full p-2 border border-gray-300 rounded" id="nama_kontak" name="nama" required type="text"/>
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-gray-700" for="email_kontak">Email</label>
+                            <input class="w-full p-2 border border-gray-300 rounded" id="email_kontak" name="email" required type="email"/>
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-gray-700" for="pesan_kontak">Pesan</label>
+                            <textarea class="w-full p-2 border border-gray-300 rounded" id="pesan_kontak" name="pesan" required rows="4"></textarea>
+                        </div>
+                        <button class="bg-green-600 text-white px-4 py-2 rounded" type="submit">Kirim</button>
+                    </form>
+                    <div id="responseMessage" class="mt-4 text-center"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Tentang Kami -->
+    <section class="py-16 fade-in" id="tentang">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-6">Tentang Kami</h2>
+            <p class="text-center max-w-2xl mx-auto mb-8">
+                Kami adalah tim pelajar SMKN 4 Kuningan yang mengembangkan website ini sebagai bagian dari tugas akhir PKL di Desa Waledkota. Website ini kami rancang untuk dipresentasikan dalam sidang PKL, dengan tujuan memberikan solusi praktis bagi pengelolaan data desa dan mempermudah akses informasi masyarakat.
+            </p>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <!-- Anggota Tim 1 -->
+                <div class="text-center">
+                    <img src="imgdev/Aditya.jpg" alt="Nama Anggota 1" class="w-32 h-32 rounded-full mx-auto mb-2"/>
+                    <h3 class="font-semibold">Aditya Krisnanda Putra</h3>
+                    <p>XII PPLG 1</p>
+                </div>
+                <!-- Anggota Tim 2 -->
+                <div class="text-center">
+                    <img src="imgdev/Naoval.jpg" alt="Nama Anggota 2" class="w-32 h-32 rounded-full mx-auto mb-2"/>
+                    <h3 class="font-semibold">Naoval Fatawijaya Mahendra</h3>
+                    <p>XII PPLG 1</p>
+                </div>
+                <!-- Anggota Tim 3 -->
+                <div class="text-center">
+                    <img src="imgdev/Gio.jpg" alt="Nama Anggota 3" class="w-32 h-32 rounded-full mx-auto mb-2"/>
+                    <h3 class="font-semibold">Gio Almazumi Novemri</h3>
+                    <p>XII PPLG 1</p>
+                </div>
+                <!-- Anggota Tim 4 -->
+                <div class="text-center">
+                    <img src="imgdev/Henry.jpg" alt="Nama Anggota 4" class="w-32 h-32 rounded-full mx-auto mb-2"/>
+                    <h3 class="font-semibold">Muhammad Henry</h3>
+                    <p>XII PPLG 1</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-green-600 text-white py-4">
+        <div class="container mx-auto text-center">
+            <p>© 2024 Dewata. All rights reserved.</p>
+        </div>
+    </footer>
+    <button id="back-to-top" class="fixed bottom-5 right-5 bg-green-600 text-white p-3 rounded-full shadow-lg hidden transition-opacity duration-300">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    <script>
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            var menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+
+            document.querySelector('form').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        fetch(this.action, {
+            method: 'POST',
+            body: new FormData(this),
+            headers: {
+                'Accept': 'application/json'
+            }
+        })
+        .then(response => {
+            if (response.ok) {
+                document.getElementById('responseMessage').innerText = 'Pengaduan Anda berhasil dikirim!';
+                this.reset();
+            } else {
+                throw new Error('Terjadi kesalahan saat mengirim pengaduan.');
+            }
+        })
+        .catch(error => {
+            document.getElementById('responseMessage').innerText = error.message;
+            });
+        });
+        
+        document.getElementById('kontakForm').addEventListener('submit', function(event) {
+        event.preventDefault(); 
+
+        fetch(this.action, {
+            method: 'POST',
+            body: new FormData(this),
+            headers: {
+                'Accept': 'application/json'
+            }
+        })
+        .then(response => {
+            if (response.ok) {
+                document.getElementById('responseMessage').innerText = 'Pesan Anda berhasil dikirim!';
+                this.reset();
+            } else {
+                throw new Error('Terjadi kesalahan saat mengirim pesan.');
+            }
+        })
+        .catch(error => {
+            document.getElementById('responseMessage').innerText = error.message;
+            });
+        });
+
+        });
+        function toggleContent(toggleId, contentId) {
+        const toggleElement = document.getElementById(toggleId);
+        const contentElement = document.getElementById(contentId);
+        const iconElement = toggleElement.querySelector('i');
+
+        toggleElement.addEventListener('click', () => {
+            contentElement.classList.toggle('hidden');
+
+            if (contentElement.classList.contains('hidden')) {
+                iconElement.classList.remove('fa-chevron-up');
+                iconElement.classList.add('fa-chevron-down');
+            } else {
+                iconElement.classList.remove('fa-chevron-down');
+                iconElement.classList.add('fa-chevron-up');
+            }
+            });
+        }
+
+            let lastScrollTop = 0;
+                const navbar = document.getElementById('navbar');
+
+                window.addEventListener('scroll', function() {
+                    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+                    if (scrollTop > lastScrollTop) {
+                        
+                        navbar.style.transform = 'translateY(-100%)';                     
+                    } else {    
+                        navbar.style.transform = 'translateY(0)';
+                    }
+                    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+                });
+
+            toggleContent('toggle-sda', 'content-sda');
+            toggleContent('toggle-sdm', 'content-sdm');
+            toggleContent('toggle-produk', 'content-produk');
+            toggleContent('toggle-pariwisata', 'content-pariwisata');
+            
+        document.addEventListener("DOMContentLoaded", function() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+
+            const options = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, options);
+
+            fadeElements.forEach(element => {
+                observer.observe(element);
+            });
+
+            window.addEventListener('scroll', function() {
+                const button = document.getElementById('back-to-top');
+                if (window.scrollY > 500) {
+                    button.classList.remove('hidden');
+                } else {
+                    button.classList.add('hidden');
+                }
+            });
+
+            document.getElementById('back-to-top').addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth' 
+                });
+            });
+        });
+    </script>
+</body>
+</html>
